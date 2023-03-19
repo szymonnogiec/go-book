@@ -12,9 +12,9 @@ func count() {
 	}
 }
 
-// func main() {
-// 	go count()
-// 	time.Sleep(time.Millisecond * 2)
-// 	fmt.Println("Hello World")
-// 	time.Sleep(time.Millisecond * 5)
-// }
+func main() {
+	go count()
+	time.Sleep(time.Millisecond * 2)
+	fmt.Println("Hello World")
+	time.Sleep(time.Millisecond * 5)
+}

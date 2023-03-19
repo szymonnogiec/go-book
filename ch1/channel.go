@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func printCount(c chan int) {
@@ -12,15 +13,15 @@ func printCount(c chan int) {
 	}
 }
 
-// func main() {
-// 	c := make(chan int)
-// 	a := []int{8, 6, 7, 5, 3, 0, 9, -1}
+func main() {
+	c := make(chan int)
+	a := []int{8, 6, 7, 5, 3, 0, 9, -1}
 
-// 	go printCount(c)
-// 	for _, v := range a {
-// 		c <- v
-// 	}
-// 	time.Sleep(time.Millisecond * 1)
-// 	fmt.Println("End of main")
+	go printCount(c)
+	for _, v := range a {
+		c <- v
+	}
+	time.Sleep(time.Millisecond * 1)
+	fmt.Println("End of main")
 
-// }
+}

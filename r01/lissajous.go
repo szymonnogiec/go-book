@@ -5,6 +5,7 @@ import (
 	"image/color"
 	"image/gif"
 	"io"
+	"log"
 	"math"
 	"math/rand"
 	"os"
@@ -25,7 +26,12 @@ const (
 )
 
 func main() {
-	lissajous(os.Stdout)
+	filename := "file.gif"
+	f, err := os.Create(filename)
+	if err != nil {
+		log.Fatalf("Error opening file %s, %q", filename, err)
+	}
+	lissajous(f)
 }
 
 func lissajous(out io.Writer) {
